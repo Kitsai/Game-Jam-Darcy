@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://yw7dpnsb27vv"]
+
+[ext_resource type="Texture2D" uid="uid://c8sgwx2pd7qmn" path="res://assets/Monochrome/Tiles/tile_0124.png" id="1_4rilu"]
+[ext_resource type="Script" path="res://scenes/Playercharacter/player.gd" id="1_u86i3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8y44f"]
+radius = 8.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcsw7"]
+size = Vector2(52, 42)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+floor_stop_on_slope = false
+script = ExtResource("1_u86i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_8y44f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_4rilu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = -0.22
+drag_vertical_offset = -0.24
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mcsw7")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

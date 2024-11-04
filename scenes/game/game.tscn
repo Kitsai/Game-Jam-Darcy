@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch4jffbf22ofy"]
+
+[ext_resource type="Texture2D" uid="uid://dku5sboyhbd1u" path="res://assets/City/Sample.png" id="2_244jd"]
+[ext_resource type="PackedScene" uid="uid://yw7dpnsb27vv" path="res://scenes/Playercharacter/player.tscn" id="3_ml8w3"]
+[ext_resource type="PackedScene" uid="uid://cougwxx38pp7b" path="res://scenes/NPC/NPC.tscn" id="3_vu25g"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324.75)
+scale = Vector2(1.2549, 1.23981)
+texture = ExtResource("2_244jd")
+
+[node name="Player" parent="." instance=ExtResource("3_ml8w3")]
+position = Vector2(282, 164)
+
+[node name="NPC" parent="." instance=ExtResource("3_vu25g")]
+position = Vector2(427, 395)
+disable_mode = 1
+
+[node name="NPC2" parent="." instance=ExtResource("3_vu25g")]
+position = Vector2(518, 107)
+disable_mode = 1
