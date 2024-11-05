@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://yw7dpnsb27vv"]
 
-[ext_resource type="Texture2D" uid="uid://c8sgwx2pd7qmn" path="res://assets/Monochrome/Tiles/tile_0124.png" id="1_4rilu"]
 [ext_resource type="Script" path="res://scenes/Playercharacter/player.gd" id="1_u86i3"]
+[ext_resource type="SpriteFrames" uid="uid://bdhwrtwdr44d8" path="res://scenes/Playercharacter/PlayerCharacter.tres" id="3_k42hx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8y44f"]
 radius = 8.0
@@ -19,12 +19,8 @@ script = ExtResource("1_u86i3")
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_8y44f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("1_4rilu")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -38,3 +34,10 @@ shape = SubResource("RectangleShape2D_mcsw7")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_k42hx")
+animation = &"Side"
+autoplay = "default"

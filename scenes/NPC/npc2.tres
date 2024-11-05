@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=3 format=3 uid="uid://cri5or6gjk56i"]
+
+[ext_resource type="Texture2D" uid="uid://bqy2feeyt3ugp" path="res://assets/Monochrome/Tiles/tile_0127.png" id="1_eg1a2"]
+[ext_resource type="Script" path="res://scenes/NPC/npc_data.gd" id="1_od85f"]
+
+[resource]
+script = ExtResource("1_od85f")
+name = "Npc2"
+Sprite = ExtResource("1_eg1a2")
+Dialogue_Path = ""

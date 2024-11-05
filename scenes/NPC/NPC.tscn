@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cougwxx38pp7b"]
+[gd_scene load_steps=8 format=3 uid="uid://cougwxx38pp7b"]
 
 [ext_resource type="Script" path="res://scenes/NPC/npc.gd" id="1_fexb8"]
-[ext_resource type="Texture2D" uid="uid://b7dqof5bsf1xq" path="res://assets/Monochrome/Tiles/tile_0125.png" id="1_ot86p"]
+[ext_resource type="Resource" uid="uid://ta5mbealiltf" path="res://scenes/NPC/npc1.tres" id="2_mohb1"]
+[ext_resource type="Texture2D" uid="uid://bidiqcultvkra" path="res://assets/Monochrome/Tiles/tile_0126.png" id="3_cm1p8"]
 [ext_resource type="AudioStream" uid="uid://daxgfl3sylc8m" path="res://assets/audio/pepSound1.ogg" id="3_pyvhf"]
+[ext_resource type="Texture2D" uid="uid://bw4gnjjx1tlhs" path="res://assets/kenney_ui-pack-adventure/PNG/Default/banner_modern.png" id="5_meo0p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3425y"]
 radius = 7.0
@@ -14,6 +16,7 @@ size = Vector2(55, 49)
 [node name="NPC" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_fexb8")
+Metadata = ExtResource("2_mohb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
@@ -22,7 +25,7 @@ shape = SubResource("CapsuleShape2D_3425y")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("1_ot86p")
+texture = ExtResource("3_cm1p8")
 
 [node name="Interect Area" type="Area2D" parent="."]
 
@@ -32,6 +35,24 @@ shape = SubResource("RectangleShape2D_u8ot3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pyvhf")
+
+[node name="DialogueBox" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(52.75, -32)
+scale = Vector2(0.330078, 0.520833)
+texture = ExtResource("5_meo0p")
+
+[node name="Label" type="Label" parent="DialogueBox"]
+offset_left = -39.0
+offset_top = -15.0
+offset_right = 49.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0.991164, 0.991164, 0.991164, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Interact
+"
 
 [connection signal="area_entered" from="Interect Area" to="." method="open_dialogue_option"]
 [connection signal="area_exited" from="Interect Area" to="." method="close_dialogue_option"]
