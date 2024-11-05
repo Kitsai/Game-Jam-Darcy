@@ -16,13 +16,6 @@ signal npc_interact;
 
 var dialogue_open: bool = false;
 
-
-func _physics_process(delta: float) -> void:
-
-	move_and_slide()
-
-
-
 func open_dialogue_option(other: Area2D) -> void:
 	dialogue_open = true;
 	audio_stream_player_2d.stop();

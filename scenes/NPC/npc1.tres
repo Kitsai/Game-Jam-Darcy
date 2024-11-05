@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://dj4cuqq0gp3oi"]
+[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://ta5mbealiltf"]
 
-[ext_resource type="Script" path="res://scenes/NPC/NpcData.gd" id="1_y7y76"]
+[ext_resource type="Script" path="res://scenes/NPC/npc_data.gd" id="1_tlvd5"]
 
 [resource]
-script = ExtResource("1_y7y76")
+script = ExtResource("1_tlvd5")
 name = ""
+Dialogue_Path = Array[String]([])
