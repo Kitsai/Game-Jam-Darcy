@@ -7,4 +7,4 @@
 script = ExtResource("1_tlvd5")
 name = "Npc1"
 Sprite = ExtResource("1_acnsq")
-Dialogue_Path = ""
+Dialogue_Path = "res://scenes/NPC/npc1_text.txt"

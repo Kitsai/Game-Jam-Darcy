@@ -16,6 +16,7 @@ func CloseDialogueFile() -> void:
 	Dialogue.close();
 
 func DialogArray() -> PackedStringArray:
+	assert(Dialogue != null);
 	assert(Dialogue.is_open());
 
 	var res: Array[String] = [];

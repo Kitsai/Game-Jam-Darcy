@@ -39,5 +39,5 @@ func close_dialogue_option(_other: Area2D) -> void:
 
 func _on_player_interact() -> void:
 	if dialogue_option:
-		print(Metadata.name);
-	pass;
+		Metadata.OpenDialogue();
+		GameController.start_dialogue(Metadata.DialogArray());

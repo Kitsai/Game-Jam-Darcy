@@ -1,11 +1,20 @@
 extends Node
 
+enum GameState {
+	Running,
+	Paused,
+	Dialogue,
+	Cutscene
+}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var _state: GameState = GameState.Running;
 
+func start_dialogue(dialogue: PackedStringArray) -> void:
+	assert(!dialogue.is_empty());
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	_state = GameState.Dialogue;
+
+	for line in dialogue:
+		print(line);
+
+	_state = GameState.Running;
