@@ -23,5 +23,6 @@ func DialogArray() -> PackedStringArray:
 
 	while !Dialogue.eof_reached():
 		res.append(Dialogue.get_line());
+	res.pop_back();
 
 	return PackedStringArray(res);

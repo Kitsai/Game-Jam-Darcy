@@ -36,14 +36,14 @@ shape = SubResource("RectangleShape2D_u8ot3")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pyvhf")
 
-[node name="DialogueBox" type="Sprite2D" parent="."]
+[node name="DialoguePrompt" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
 position = Vector2(52.75, -32)
 scale = Vector2(0.330078, 0.520833)
 texture = ExtResource("5_meo0p")
 
-[node name="Label" type="Label" parent="DialogueBox"]
+[node name="Label" type="Label" parent="DialoguePrompt"]
 offset_left = -39.0
 offset_top = -15.0
 offset_right = 49.0

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4pocwwlmnm5"]
+
+[ext_resource type="Texture2D" uid="uid://7x3hj0ja6hfj" path="res://assets/kenney_ui-pack-adventure/Vector/banner_classic_curtain.svg" id="1_8whbg"]
+[ext_resource type="Script" path="res://scenes/DialogueBox/dialogue_box.gd" id="2_6lb3v"]
+
+[node name="DialogueBox" type="TextureRect"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -321.5
+offset_top = -239.0
+offset_right = 321.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_8whbg")
+expand_mode = 2
+script = ExtResource("2_6lb3v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 57.0
+offset_right = 561.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0.635974, 0.842675, 0.958985, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+autowrap_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

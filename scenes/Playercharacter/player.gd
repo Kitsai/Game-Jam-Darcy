@@ -36,6 +36,8 @@ func get_facing_direction(direction: Vector2) -> Facing:
 	return Facing.NONE;
 
 func _physics_process(_delta: float) -> void:
+	if GameController.state != GameController.GameState.Running:
+		return
 	var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized();
 
 	var current_direction = get_facing_direction(direction);
