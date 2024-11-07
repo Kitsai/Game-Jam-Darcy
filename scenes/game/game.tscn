@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch4jffbf22ofy"]
+[gd_scene load_steps=8 format=3 uid="uid://ch4jffbf22ofy"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_1nt68"]
 [ext_resource type="PackedScene" uid="uid://dhaydspi00qnm" path="res://scenes/Map/Map.tscn" id="2_t6suj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cougwxx38pp7b" path="res://scenes/NPC/NPC.tscn" id="3_vu25g"]
 [ext_resource type="Resource" uid="uid://cri5or6gjk56i" path="res://scenes/NPC/npc2.tres" id="4_i68bq"]
 [ext_resource type="PackedScene" uid="uid://c4pocwwlmnm5" path="res://scenes/DialogueBox/DialogueBox.tscn" id="6_f3h1f"]
+[ext_resource type="AudioStream" uid="uid://c8hi2452jgn5" path="res://assets/audio/10_Serenade of the Hearth.mp3" id="7_he7ei"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(4, 2)
@@ -16,10 +17,10 @@ _dialogue_box_scene = ExtResource("6_f3h1f")
 position = Vector2(28, 30)
 
 [node name="Player" parent="." instance=ExtResource("3_ml8w3")]
-position = Vector2(338, 194)
+position = Vector2(1196, 207)
 
 [node name="NPC" parent="." instance=ExtResource("3_vu25g")]
-position = Vector2(427, 395)
+position = Vector2(876, 534)
 disable_mode = 1
 
 [node name="NPC2" parent="." instance=ExtResource("3_vu25g")]
@@ -27,9 +28,20 @@ position = Vector2(518, 107)
 disable_mode = 1
 Metadata = ExtResource("4_i68bq")
 
+[node name="NPC3" parent="." instance=ExtResource("3_vu25g")]
+position = Vector2(1434, 153)
+flip_prompt = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_he7ei")
+volume_db = -13.552
+autoplay = true
+parameters/looping = true
 
 [connection signal="interact" from="Player" to="NPC" method="_on_player_interact"]
 [connection signal="interact" from="Player" to="NPC2" method="_on_player_interact"]
 [connection signal="npc_talking" from="NPC" to="." method="start_dialogue"]
 [connection signal="npc_talking" from="NPC2" to="." method="start_dialogue"]
+[connection signal="npc_talking" from="NPC3" to="." method="start_dialogue"]

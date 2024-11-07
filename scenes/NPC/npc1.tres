@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="NpcData" load_steps=3 format=3 uid="uid://ta5mbealiltf"]
 
-[ext_resource type="Texture2D" uid="uid://b7dqof5bsf1xq" path="res://assets/Monochrome/Tiles/tile_0125.png" id="1_acnsq"]
+[ext_resource type="Texture2D" uid="uid://bkxeftnobnmo2" path="res://assets/City/Tiles/tile_0267.png" id="1_j6ai1"]
 [ext_resource type="Script" path="res://scenes/NPC/npc_data.gd" id="1_tlvd5"]
 
 [resource]
 script = ExtResource("1_tlvd5")
 name = "Npc1"
-Sprite = ExtResource("1_acnsq")
+Sprite = ExtResource("1_j6ai1")
 Dialogue_Path = "res://scenes/NPC/npc1_text.txt"

@@ -13,6 +13,7 @@ const close_dialog_sound = preload("res://assets/audio/pepSound1.ogg");
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var DialoguePrompt: Sprite2D = $DialoguePrompt
 @onready var sprite: Sprite2D = $Sprite2D
+@export var flip_prompt: bool = false
 
 
 @export var SPEED = 300.0
@@ -21,6 +22,8 @@ var dialogue_option: bool = false;
 
 func _ready() -> void:
 	sprite.texture = Metadata.Sprite;
+	if flip_prompt:
+		DialoguePrompt.position.x *= -1;
 
 func open_dialogue_option(_other: Area2D) -> void:
 	dialogue_option = true;

@@ -11,7 +11,9 @@ height = 10.0
 size = Vector2(52, 42)
 
 [node name="Player" type="CharacterBody2D"]
+physics_interpolation_mode = 1
 z_index = 5
+y_sort_enabled = true
 position = Vector2(15, 166)
 motion_mode = 1
 floor_stop_on_slope = false

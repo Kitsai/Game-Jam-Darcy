@@ -8,12 +8,13 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3425y"]
 radius = 7.0
-height = 19.0
+height = 18.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8ot3"]
 size = Vector2(55, 49)
 
 [node name="NPC" type="CharacterBody2D"]
+z_index = 4
 motion_mode = 1
 script = ExtResource("1_fexb8")
 Metadata = ExtResource("2_mohb1")
@@ -38,6 +39,7 @@ stream = ExtResource("3_pyvhf")
 
 [node name="DialoguePrompt" type="Sprite2D" parent="."]
 visible = false
+z_index = 10
 texture_filter = 1
 position = Vector2(52.75, -32)
 scale = Vector2(0.330078, 0.520833)
