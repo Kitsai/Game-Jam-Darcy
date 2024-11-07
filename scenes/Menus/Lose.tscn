@@ -19,7 +19,7 @@ theme_override_constants/separation = 150
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Voce errou o culpado e ele esta a solta..."
+text = "Você errou o culpado e ele está a solta..."
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
