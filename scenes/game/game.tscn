@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch4jffbf22ofy"]
+[gd_scene load_steps=7 format=3 uid="uid://ch4jffbf22ofy"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_1nt68"]
-[ext_resource type="Texture2D" uid="uid://dku5sboyhbd1u" path="res://assets/City/Sample.png" id="2_244jd"]
 [ext_resource type="PackedScene" uid="uid://dhaydspi00qnm" path="res://scenes/Map/Map.tscn" id="2_t6suj"]
 [ext_resource type="PackedScene" uid="uid://yw7dpnsb27vv" path="res://scenes/Playercharacter/player.tscn" id="3_ml8w3"]
 [ext_resource type="PackedScene" uid="uid://cougwxx38pp7b" path="res://scenes/NPC/NPC.tscn" id="3_vu25g"]
@@ -9,19 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://c4pocwwlmnm5" path="res://scenes/DialogueBox/DialogueBox.tscn" id="6_f3h1f"]
 
 [node name="Game" type="Node2D"]
+position = Vector2(4, 2)
 script = ExtResource("1_1nt68")
 _dialogue_box_scene = ExtResource("6_f3h1f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(578, 324.75)
-scale = Vector2(1.2549, 1.23981)
-texture = ExtResource("2_244jd")
-
 [node name="Map" parent="." instance=ExtResource("2_t6suj")]
-position = Vector2(427, 395)
+position = Vector2(28, 30)
 
 [node name="Player" parent="." instance=ExtResource("3_ml8w3")]
-position = Vector2(281, 164)
+position = Vector2(338, 194)
 
 [node name="NPC" parent="." instance=ExtResource("3_vu25g")]
 position = Vector2(427, 395)
