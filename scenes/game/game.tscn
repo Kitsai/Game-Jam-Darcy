@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch4jffbf22ofy"]
+[gd_scene load_steps=11 format=3 uid="uid://ch4jffbf22ofy"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_1nt68"]
 [ext_resource type="PackedScene" uid="uid://dhaydspi00qnm" path="res://scenes/Map/Map.tscn" id="2_t6suj"]
@@ -7,6 +7,9 @@
 [ext_resource type="Resource" uid="uid://cri5or6gjk56i" path="res://scenes/NPC/npc2.tres" id="4_i68bq"]
 [ext_resource type="PackedScene" uid="uid://c4pocwwlmnm5" path="res://scenes/DialogueBox/DialogueBox.tscn" id="6_f3h1f"]
 [ext_resource type="AudioStream" uid="uid://c8hi2452jgn5" path="res://assets/audio/10_Serenade of the Hearth.mp3" id="7_he7ei"]
+[ext_resource type="Resource" uid="uid://cuahsyoclph6j" path="res://scenes/NPC/npc3.tres" id="7_nawjh"]
+[ext_resource type="PackedScene" uid="uid://dsobxs1f8n1pg" path="res://scenes/ChooseGuilty/choose_guilty.tscn" id="8_xeie7"]
+[ext_resource type="PackedScene" uid="uid://cigjusvckmgtt" path="res://scenes/Menus/Start.tscn" id="9_buxd1"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(4, 2)
@@ -30,9 +33,15 @@ Metadata = ExtResource("4_i68bq")
 
 [node name="NPC3" parent="." instance=ExtResource("3_vu25g")]
 position = Vector2(1434, 153)
+Metadata = ExtResource("7_nawjh")
 flip_prompt = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Chooser" parent="CanvasLayer" instance=ExtResource("8_xeie7")]
+visible = false
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("9_buxd1")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_he7ei")
@@ -40,8 +49,21 @@ volume_db = -13.552
 autoplay = true
 parameters/looping = true
 
+[node name="Label" type="Label" parent="."]
+offset_left = 1289.0
+offset_top = 196.0
+offset_right = 1459.0
+offset_bottom = 271.0
+theme_override_colors/font_color = Color(0.377919, 0.377919, 0.377919, 1)
+text = "Aperte enter para tentar adivinhar"
+autowrap_mode = 2
+
+[connection signal="park_dialogue_off" from="Map" to="Player" method="_on_map_park_dialogue_off"]
+[connection signal="park_dialogue_on" from="Map" to="Player" method="_on_map_park_dialogue_on"]
 [connection signal="interact" from="Player" to="NPC" method="_on_player_interact"]
 [connection signal="interact" from="Player" to="NPC2" method="_on_player_interact"]
+[connection signal="interact" from="Player" to="NPC3" method="_on_player_interact"]
 [connection signal="npc_talking" from="NPC" to="." method="start_dialogue"]
 [connection signal="npc_talking" from="NPC2" to="." method="start_dialogue"]
 [connection signal="npc_talking" from="NPC3" to="." method="start_dialogue"]
+[connection signal="chosen" from="CanvasLayer/Chooser" to="." method="_on_chosen"]

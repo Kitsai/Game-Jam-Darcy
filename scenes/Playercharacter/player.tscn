@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://yw7dpnsb27vv"]
+[gd_scene load_steps=8 format=3 uid="uid://yw7dpnsb27vv"]
 
 [ext_resource type="Script" path="res://scenes/Playercharacter/player.gd" id="1_u86i3"]
+[ext_resource type="Texture2D" uid="uid://bnwtv5io8drle" path="res://assets/kenney_ui-pack-adventure/Vector/banner_modern.svg" id="3_2xdag"]
 [ext_resource type="SpriteFrames" uid="uid://bdhwrtwdr44d8" path="res://scenes/Playercharacter/PlayerCharacter.tres" id="3_k42hx"]
+[ext_resource type="FontFile" uid="uid://dok25736sugme" path="res://assets/fonts/Kalnia_Glaze,Roboto/Roboto/Roboto-Regular.ttf" id="4_dslt6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8y44f"]
 radius = 4.0
@@ -9,6 +11,12 @@ height = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcsw7"]
 size = Vector2(52, 42)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xsapn"]
+font = ExtResource("4_dslt6")
+font_size = 13
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody2D"]
 physics_interpolation_mode = 1
@@ -52,3 +60,25 @@ scale = Vector2(2, 2)
 sprite_frames = ExtResource("3_k42hx")
 animation = &"Side"
 autoplay = "default"
+
+[node name="ParkDialogue" type="TextureRect" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = -59.0
+offset_right = 264.0
+offset_bottom = -11.0
+texture = ExtResource("3_2xdag")
+
+[node name="Label" type="Label" parent="ParkDialogue"]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Estao arrumando o poste do parque"
+label_settings = SubResource("LabelSettings_xsapn")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

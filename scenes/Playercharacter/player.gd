@@ -6,6 +6,7 @@ signal interact;
 
 @export var SPEED = 300.0
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D;
+@onready var park_dialogue: TextureRect = $ParkDialogue
 
 enum Facing {
 	UP,
@@ -69,3 +70,11 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * SPEED;
 
 	move_and_slide();
+
+
+func _on_map_park_dialogue_on() -> void:
+	park_dialogue.set_visible(true);
+
+
+func _on_map_park_dialogue_off() -> void:
+	park_dialogue.set_visible(false);

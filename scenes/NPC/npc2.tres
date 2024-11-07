@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_od85f")
-name = "Npc2"
+name = "Hannah"
 Sprite = ExtResource("1_iab2s")
 Dialogue_Path = "res://scenes/NPC/npc2_text.txt"

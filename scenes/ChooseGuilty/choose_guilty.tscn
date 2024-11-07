@@ -1,35 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsobxs1f8n1pg"]
+[gd_scene load_steps=6 format=3 uid="uid://dsobxs1f8n1pg"]
 
-[ext_resource type="Script" path="res://choose_guilty.gd" id="1_ll5jq"]
+[ext_resource type="Script" path="res://scenes/ChooseGuilty/choose_guilty.gd" id="1_kbm08"]
+[ext_resource type="Theme" uid="uid://c6d783yxtte2s" path="res://scenes/ChooseGuilty/testTheme.tres" id="1_y4u4v"]
+[ext_resource type="Texture2D" uid="uid://bkxeftnobnmo2" path="res://assets/City/Tiles/tile_0267.png" id="2_vh5fi"]
+[ext_resource type="Texture2D" uid="uid://b2vrrbwfi35r3" path="res://assets/City/Tiles/tile_0105.png" id="3_shi80"]
+[ext_resource type="Texture2D" uid="uid://g2sps5jcum06" path="res://assets/City/Tiles/tile_0348.png" id="4_h4c1b"]
 
-[node name="ChooseGuilty" type="Control"]
-layout_mode = 3
+[node name="Chooser" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ll5jq")
+script = ExtResource("1_kbm08")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.372549)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 200
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.56
+theme_override_constants/separation = 100
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("1_y4u4v")
+action_mode = 0
+text = "BOB
+"
+icon = ExtResource("2_vh5fi")
+icon_alignment = 2
+expand_icon = true
+text_direction = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_y4u4v")
+action_mode = 0
+text = " HANNAH"
+icon = ExtResource("3_shi80")
+icon_alignment = 2
+expand_icon = true
+text_direction = 1
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_y4u4v")
+action_mode = 0
+text = "ROCHA
+"
+icon = ExtResource("4_h4c1b")
+icon_alignment = 2
+expand_icon = true
+text_direction = 1
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Button" to="." method="_bob_chosen"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Button2" to="." method="_on_hannah_chosen"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Button3" to="." method="_on_Rocha_chosen"]

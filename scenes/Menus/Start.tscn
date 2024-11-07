@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cigjusvckmgtt"]
+
+[ext_resource type="Script" path="res://scenes/Menus/start.gd" id="1_gkbek"]
+
+[node name="Panel" type="Panel"]
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_gkbek")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 610.0
+offset_right = 54.0
+offset_bottom = 633.0
+text = "Aperte espaco para comecar..."
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 187.0
+offset_right = 958.0
+offset_bottom = 288.0
+text = "Durante a noite voce houve barulhos do lado de fora da sua casa... Na manha seguinte assim que sai de casa 
+O pior aconteceu, ha um corpo no beco ao lado de sua casa. 
+
+Descubra quem cometeu esse ato..."
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_toggle_visibility"]

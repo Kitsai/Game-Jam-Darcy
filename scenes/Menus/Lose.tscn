@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhwky7xxx380k"]
+
+[ext_resource type="Script" path="res://scenes/Menus/EndScreen.gd" id="1_41kca"]
+[ext_resource type="Texture2D" uid="uid://dedf5jxnnal8l" path="res://assets/kenney_playing-cards-pack/PNG/Cards (large)/card_joker_black.png" id="1_74jxh"]
+[ext_resource type="Texture2D" uid="uid://bmjmxq5dugyln" path="res://assets/kenney_playing-cards-pack/PNG/Cards (large)/card_joker_red.png" id="2_lipi1"]
+
+[node name="End" type="PanelContainer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_41kca")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Voce errou o culpado e ele esta a solta..."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Aperte 'Enter' para reiniciar"
+horizontal_alignment = 1
+
+[node name="CardJokerBlack" type="Sprite2D" parent="."]
+position = Vector2(40, 604)
+rotation = 0.690522
+scale = Vector2(3, 3.258)
+texture = ExtResource("1_74jxh")
+
+[node name="CardJokerRed" type="Sprite2D" parent="."]
+position = Vector2(1130, 36)
+rotation = -1.96731
+scale = Vector2(3.5, 3.722)
+texture = ExtResource("2_lipi1")
